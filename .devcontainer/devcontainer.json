@@ -1,0 +1,21 @@
+{
+  "name": "SN22 Testnet Miner",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "20" }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  },
+  "forwardPorts": [60004],
+  "portsAttributes": {
+    "60004": {
+      "label": "SN22 Miner Axon (testnet)",
+      "onAutoForward": "notify"
+    }
+  },
+  "postStartCommand": "pm2 resurrect || echo 'No PM2 processes to restore'"
+}
