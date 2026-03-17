@@ -5,6 +5,6 @@ python3 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
 pip install -e .
-pip install bittensor-cli
+pipx install bittensor-cli
 npm install -g pm2
 echo "Setup complete!"
