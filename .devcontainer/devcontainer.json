@@ -18,5 +18,5 @@
       "onAutoForward": "notify"
     }
   },
-  "postStartCommand": "pm2 resurrect || echo 'No PM2 processes to restore'"
+  "postStartCommand": "gh codespace ports visibility 60004:public -c $CODESPACE_NAME 2>/dev/null || true; pm2 resurrect || echo 'No PM2 processes to restore'"
 }
